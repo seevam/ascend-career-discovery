@@ -1,0 +1,173 @@
+{
+  "version": "1.0",
+  "categories": [
+    {
+      "id": "arts_creativity",
+      "name": "Arts & Creativity",
+      "icon": "🎨",
+      "description": "Express yourself through design, art, music, and visual storytelling",
+      "keywords": ["design", "art", "creative", "visual", "aesthetic"],
+      "resultDescription": "You're drawn to creative expression, design, and visual problem-solving. You enjoy bringing ideas to life through aesthetics, whether that's art, design, music, or architecture. You notice details others miss and think about how things look and feel.",
+      "sampleCareers": [
+        "UX/UI Designer",
+        "Animator",
+        "Architect",
+        "Graphic Designer",
+        "Art Director",
+        "Interior Designer",
+        "Industrial Designer"
+      ],
+      "skillsToDevelop": [
+        "Design tools (Figma, Adobe Creative Suite, Canva)",
+        "Visual storytelling and composition",
+        "User experience principles",
+        "Typography and color theory",
+        "Portfolio building and presentation"
+      ]
+    },
+    {
+      "id": "stem_technology",
+      "name": "STEM & Technology",
+      "icon": "🔬",
+      "description": "Solve problems through science, technology, engineering, and math",
+      "keywords": ["technology", "science", "coding", "engineering", "math"],
+      "resultDescription": "You enjoy logical problem-solving, understanding how things work, and using technology to build solutions. You're curious about the scientific method, data, and analytical thinking.",
+      "sampleCareers": [
+        "Software Engineer",
+        "Data Scientist",
+        "Mechanical Engineer",
+        "Research Scientist",
+        "Robotics Engineer",
+        "Cybersecurity Analyst",
+        "Biomedical Engineer"
+      ],
+      "skillsToDevelop": [
+        "Programming (Python, JavaScript, etc.)",
+        "Critical thinking and problem-solving",
+        "Mathematics and statistics",
+        "Scientific research methods",
+        "Technical documentation"
+      ]
+    },
+    {
+      "id": "social_impact",
+      "name": "Social Impact & Helping",
+      "icon": "🤝",
+      "description": "Make a difference by helping others and addressing social issues",
+      "keywords": ["helping", "volunteering", "community", "social", "service"],
+      "resultDescription": "You're motivated by making a positive difference in people's lives and your community. You care deeply about social issues, justice, and helping others overcome challenges.",
+      "sampleCareers": [
+        "Social Worker",
+        "Community Organizer",
+        "Nonprofit Director",
+        "Teacher",
+        "Public Health Worker",
+        "Counselor",
+        "Policy Advocate"
+      ],
+      "skillsToDevelop": [
+        "Active listening and empathy",
+        "Community organizing",
+        "Communication skills",
+        "Understanding social systems",
+        "Cultural competency"
+      ]
+    },
+    {
+      "id": "business_entrepreneurship",
+      "name": "Business & Entrepreneurship",
+      "icon": "💼",
+      "description": "Lead, innovate, and create business solutions",
+      "keywords": ["business", "leadership", "entrepreneurship", "strategy", "sales"],
+      "resultDescription": "You're interested in how businesses work, strategy, and creating value. You enjoy leadership, solving business problems, and potentially building your own ventures.",
+      "sampleCareers": [
+        "Entrepreneur",
+        "Business Analyst",
+        "Marketing Manager",
+        "Product Manager",
+        "Financial Analyst",
+        "Management Consultant",
+        "Sales Director"
+      ],
+      "skillsToDevelop": [
+        "Business strategy and planning",
+        "Financial literacy",
+        "Marketing and sales",
+        "Leadership and team management",
+        "Pitching and presentation"
+      ]
+    },
+    {
+      "id": "nature_environment",
+      "name": "Nature & Environment",
+      "icon": "🌿",
+      "description": "Connect with nature and work toward environmental sustainability",
+      "keywords": ["nature", "environment", "outdoors", "sustainability", "conservation"],
+      "resultDescription": "You feel energized by nature and care about environmental sustainability. You're interested in conservation, understanding ecosystems, and finding solutions to environmental challenges.",
+      "sampleCareers": [
+        "Environmental Scientist",
+        "Conservation Biologist",
+        "Sustainable Architect",
+        "Park Ranger",
+        "Climate Policy Analyst",
+        "Marine Biologist",
+        "Environmental Engineer"
+      ],
+      "skillsToDevelop": [
+        "Environmental science",
+        "Data collection and analysis",
+        "Sustainability practices",
+        "Field research methods",
+        "Environmental policy"
+      ]
+    },
+    {
+      "id": "health_wellness",
+      "name": "Health & Wellness",
+      "icon": "❤️",
+      "description": "Support physical and mental health and wellbeing",
+      "keywords": ["health", "medicine", "fitness", "wellness", "psychology"],
+      "resultDescription": "You're interested in how the human body and mind work, and you want to help people achieve better health. This includes physical health, mental health, and overall wellness.",
+      "sampleCareers": [
+        "Physician",
+        "Nurse",
+        "Physical Therapist",
+        "Psychologist",
+        "Nutritionist",
+        "Athletic Trainer",
+        "Public Health Specialist"
+      ],
+      "skillsToDevelop": [
+        "Anatomy and physiology",
+        "Psychology fundamentals",
+        "Patient care and empathy",
+        "Health research methods",
+        "Wellness coaching"
+      ]
+    },
+    {
+      "id": "communication_media",
+      "name": "Communication & Media",
+      "icon": "📢",
+      "description": "Share stories, ideas, and information through various media",
+      "keywords": ["communication", "media", "journalism", "writing", "broadcasting"],
+      "resultDescription": "You enjoy storytelling, sharing information, and connecting with audiences through various forms of media. You're interested in journalism, content creation, or communications.",
+      "sampleCareers": [
+        "Journalist",
+        "Content Creator",
+        "Public Relations Specialist",
+        "Video Producer",
+        "Podcaster",
+        "Social Media Manager",
+        "Communications Director"
+      ],
+      "skillsToDevelop": [
+        "Writing and editing",
+        "Video and audio production",
+        "Social media strategy",
+        "Public speaking",
+        "Research and fact-checking"
+      ]
+    }
+  ]
+}

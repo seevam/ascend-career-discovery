@@ -1,0 +1,1306 @@
+{
+  "version": "1.0",
+  "scenarios": {
+    "arts_creativity": [
+      {
+        "id": "arts_001",
+        "category": "arts_creativity",
+        "question": "You have a free Saturday afternoon. You find yourself naturally drawn to...",
+        "choices": [
+          {
+            "id": "arts_001_a",
+            "text": "Designing a logo for your friend's YouTube channel and experimenting with colors",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "arts_001_b",
+            "text": "Building something with Arduino or taking apart old electronics to see how they work",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_001_c",
+            "text": "Organizing a fundraiser or volunteering at a local community center",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_001_d",
+            "text": "Researching business ideas and creating a pitch for a new product or service",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arts_002",
+        "category": "arts_creativity",
+        "question": "Your school is decorating for an event. What role do you naturally take?",
+        "choices": [
+          {
+            "id": "arts_002_a",
+            "text": "Designing the theme and creating mood boards with colors and styles",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_002_b",
+            "text": "Managing the budget and coordinating teams to get everything done",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_002_c",
+            "text": "Writing promotional materials and posting on social media",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_002_d",
+            "text": "Making sure everyone feels included and heard in the planning process",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arts_003",
+        "category": "arts_creativity",
+        "question": "When you see a poorly designed app or website, your first thought is...",
+        "choices": [
+          {
+            "id": "arts_003_a",
+            "text": "I could redesign this to look better and be more user-friendly",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_003_b",
+            "text": "I wonder what code changes would fix these bugs and improve performance",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_003_c",
+            "text": "This could reach more people with better marketing and messaging",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "arts_003_d",
+            "text": "This doesn't seem accessible to people with disabilities",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arts_004",
+        "category": "arts_creativity",
+        "question": "Your dream workspace would have...",
+        "choices": [
+          {
+            "id": "arts_004_a",
+            "text": "A drawing tablet, design tools, mood boards, and lots of natural light",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_004_b",
+            "text": "Multiple monitors, the latest tech, and a whiteboard for algorithms",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_004_c",
+            "text": "Comfortable seating for meetings and collaborative brainstorming",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "arts_004_d",
+            "text": "Recording equipment, cameras, and editing software",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arts_005",
+        "category": "arts_creativity",
+        "question": "When watching a movie, you tend to notice...",
+        "choices": [
+          {
+            "id": "arts_005_a",
+            "text": "The cinematography, color grading, and visual composition",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "arts_005_b",
+            "text": "The special effects and wondering how they were created technically",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "arts_creativity", "weight": 1 }
+            ]
+          },
+          {
+            "id": "arts_005_c",
+            "text": "The story's social messages and how it represents different communities",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "arts_005_d",
+            "text": "The marketing strategy and how the film became successful",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "stem_technology": [
+      {
+        "id": "stem_001",
+        "category": "stem_technology",
+        "question": "Your phone suddenly stops working. Your first instinct is to...",
+        "choices": [
+          {
+            "id": "stem_001_a",
+            "text": "Research the problem online and try to troubleshoot it myself",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_001_b",
+            "text": "Take it to a repair shop and ask for help",
+            "mapping": [
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_001_c",
+            "text": "Document the issue and share my experience to help others",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_001_d",
+            "text": "Consider if it's worth repairing vs. buying a new one",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stem_002",
+        "category": "stem_technology",
+        "question": "Your school is hosting a science fair. You're most excited to...",
+        "choices": [
+          {
+            "id": "stem_002_a",
+            "text": "Build a working robot that can navigate obstacles using sensors",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_002_b",
+            "text": "Research climate change data and create an interactive infographic",
+            "mapping": [
+              { "category": "nature_environment", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_002_c",
+            "text": "Design an app that helps students track their homework and study time",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_002_d",
+            "text": "Create a video series explaining complex science topics in simple ways",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stem_003",
+        "category": "stem_technology",
+        "question": "When faced with a complex problem, you prefer to...",
+        "choices": [
+          {
+            "id": "stem_003_a",
+            "text": "Break it down into smaller parts and solve it logically step by step",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_003_b",
+            "text": "Brainstorm creative solutions and think outside the box",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_003_c",
+            "text": "Gather a team and collaborate to find the best solution together",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_003_d",
+            "text": "Research how others have solved similar problems before",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stem_004",
+        "category": "stem_technology",
+        "question": "If you could intern anywhere, you'd choose...",
+        "choices": [
+          {
+            "id": "stem_004_a",
+            "text": "A tech company working on AI, robotics, or software development",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_004_b",
+            "text": "A design studio creating beautiful products and experiences",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_004_c",
+            "text": "A nonprofit organization making a social impact",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_004_d",
+            "text": "A startup where I could learn about business and entrepreneurship",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stem_005",
+        "category": "stem_technology",
+        "question": "You discover a bug in your favorite app. What do you do?",
+        "choices": [
+          {
+            "id": "stem_005_a",
+            "text": "Try to reproduce it and figure out what's causing the technical issue",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "stem_005_b",
+            "text": "Report it to the developers with clear steps to help them fix it",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_005_c",
+            "text": "Think about how this affects users and what would improve their experience",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "arts_creativity", "weight": 1 }
+            ]
+          },
+          {
+            "id": "stem_005_d",
+            "text": "Just stop using the app and find an alternative",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "social_impact": [
+      {
+        "id": "social_001",
+        "category": "social_impact",
+        "question": "You notice a classmate being excluded from group activities. You...",
+        "choices": [
+          {
+            "id": "social_001_a",
+            "text": "Invite them to join and make sure they feel welcome",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_001_b",
+            "text": "Talk to the teacher or counselor about the situation",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_001_c",
+            "text": "Create a campaign to promote inclusivity in your school",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_001_d",
+            "text": "Mind my own business and focus on my work",
+            "mapping": []
+          }
+        ]
+      },
+      {
+        "id": "social_002",
+        "category": "social_impact",
+        "question": "If you could start a school club, it would be focused on...",
+        "choices": [
+          {
+            "id": "social_002_a",
+            "text": "Community service and volunteering opportunities",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_002_b",
+            "text": "Environmental activism and sustainability projects",
+            "mapping": [
+              { "category": "nature_environment", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_002_c",
+            "text": "Coding and technology education for everyone",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_002_d",
+            "text": "Student journalism and school news coverage",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "social_003",
+        "category": "social_impact",
+        "question": "When you hear about a social issue in the news, you typically...",
+        "choices": [
+          {
+            "id": "social_003_a",
+            "text": "Research how I can get involved and make a difference",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_003_b",
+            "text": "Share information with friends to raise awareness",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_003_c",
+            "text": "Think about systemic solutions and policy changes needed",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_003_d",
+            "text": "Feel concerned but focus on my immediate responsibilities",
+            "mapping": []
+          }
+        ]
+      },
+      {
+        "id": "social_004",
+        "category": "social_impact",
+        "question": "The most rewarding part of helping others is...",
+        "choices": [
+          {
+            "id": "social_004_a",
+            "text": "Seeing the direct positive impact on someone's life",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_004_b",
+            "text": "Learning about different perspectives and communities",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_004_c",
+            "text": "Building connections and growing a supportive community",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_004_d",
+            "text": "Creating sustainable systems that help people long-term",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "social_005",
+        "category": "social_impact",
+        "question": "Your ideal summer would include...",
+        "choices": [
+          {
+            "id": "social_005_a",
+            "text": "Volunteering with a local nonprofit or community organization",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_005_b",
+            "text": "Working outdoors as a camp counselor or park guide",
+            "mapping": [
+              { "category": "nature_environment", "weight": 2 },
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "social_005_c",
+            "text": "Interning at a creative agency or design studio",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "social_005_d",
+            "text": "Learning to code and building my own projects",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          }
+        ]
+      }
+    ],
+    "business_entrepreneurship": [
+      {
+        "id": "business_001",
+        "category": "business_entrepreneurship",
+        "question": "You have an idea for a product that could help students. Your next step is...",
+        "choices": [
+          {
+            "id": "business_001_a",
+            "text": "Create a business plan and think about how to market it",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_001_b",
+            "text": "Start building a prototype to test if it actually works",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "business_001_c",
+            "text": "Survey students to understand their needs and refine the idea",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "business_001_d",
+            "text": "Design the brand identity and how it will look and feel",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business_002",
+        "category": "business_entrepreneurship",
+        "question": "When working on a group project, you naturally take on the role of...",
+        "choices": [
+          {
+            "id": "business_002_a",
+            "text": "Project manager, organizing tasks and keeping everyone on track",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_002_b",
+            "text": "Creative lead, coming up with ideas and the overall vision",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_002_c",
+            "text": "Technical expert, handling the complex implementation details",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_002_d",
+            "text": "Team supporter, making sure everyone's voice is heard",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business_003",
+        "category": "business_entrepreneurship",
+        "question": "You're interested in how companies...",
+        "choices": [
+          {
+            "id": "business_003_a",
+            "text": "Grow from startups to successful businesses",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_003_b",
+            "text": "Create products that people love and become iconic brands",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "business_003_c",
+            "text": "Use technology to innovate and disrupt industries",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "business_003_d",
+            "text": "Make positive social and environmental impact while being profitable",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business_004",
+        "category": "business_entrepreneurship",
+        "question": "When you think about your future career, you imagine...",
+        "choices": [
+          {
+            "id": "business_004_a",
+            "text": "Starting my own company or being a leader in an organization",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_004_b",
+            "text": "Creating art, designs, or content that inspires people",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_004_c",
+            "text": "Solving important problems through science or technology",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_004_d",
+            "text": "Helping communities and making the world more equitable",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "business_005",
+        "category": "business_entrepreneurship",
+        "question": "Your school is selling merchandise for fundraising. You volunteer to...",
+        "choices": [
+          {
+            "id": "business_005_a",
+            "text": "Develop the pricing strategy and sales plan",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_005_b",
+            "text": "Design the merchandise and make it look amazing",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "business_005_c",
+            "text": "Set up an online store and handle the technical logistics",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          },
+          {
+            "id": "business_005_d",
+            "text": "Promote it on social media and create buzz",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "business_entrepreneurship", "weight": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "nature_environment": [
+      {
+        "id": "nature_001",
+        "category": "nature_environment",
+        "question": "On a perfect day off, you'd most enjoy...",
+        "choices": [
+          {
+            "id": "nature_001_a",
+            "text": "Hiking in the mountains or exploring a new trail",
+            "mapping": [
+              { "category": "nature_environment", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_001_b",
+            "text": "Working on a creative project at home or in a studio",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_001_c",
+            "text": "Learning a new programming language or building something tech-related",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_001_d",
+            "text": "Volunteering for a cause I care about",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nature_002",
+        "category": "nature_environment",
+        "question": "You're most concerned about...",
+        "choices": [
+          {
+            "id": "nature_002_a",
+            "text": "Climate change and protecting natural ecosystems",
+            "mapping": [
+              { "category": "nature_environment", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_002_b",
+            "text": "Social justice and equality in communities",
+            "mapping": [
+              { "category": "social_impact", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_002_c",
+            "text": "Innovation and how technology shapes our future",
+            "mapping": [
+              { "category": "stem_technology", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_002_d",
+            "text": "Economic opportunities and business innovation",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nature_003",
+        "category": "nature_environment",
+        "question": "If you could contribute to solving the climate crisis, you'd...",
+        "choices": [
+          {
+            "id": "nature_003_a",
+            "text": "Study environmental science and work in conservation",
+            "mapping": [
+              { "category": "nature_environment", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_003_b",
+            "text": "Develop green technologies and renewable energy solutions",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          },
+          {
+            "id": "nature_003_c",
+            "text": "Build a sustainable business that proves profitability and sustainability can coexist",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          },
+          {
+            "id": "nature_003_d",
+            "text": "Create compelling media that educates people about environmental issues",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nature_004",
+        "category": "nature_environment",
+        "question": "Watching a nature documentary, you're most fascinated by...",
+        "choices": [
+          {
+            "id": "nature_004_a",
+            "text": "How ecosystems work and how animals adapt to their environment",
+            "mapping": [
+              { "category": "nature_environment", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_004_b",
+            "text": "The cinematography and how they captured such beautiful footage",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "nature_004_c",
+            "text": "The technology used to film and study wildlife",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          },
+          {
+            "id": "nature_004_d",
+            "text": "The human impact on these ecosystems and what we can do",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nature_005",
+        "category": "nature_environment",
+        "question": "Your school is starting a sustainability initiative. You'd want to...",
+        "choices": [
+          {
+            "id": "nature_005_a",
+            "text": "Lead environmental audits and create conservation programs",
+            "mapping": [
+              { "category": "nature_environment", "weight": 3 }
+            ]
+          },
+          {
+            "id": "nature_005_b",
+            "text": "Design awareness campaigns and educational materials",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "arts_creativity", "weight": 1 }
+            ]
+          },
+          {
+            "id": "nature_005_c",
+            "text": "Implement tech solutions like energy monitoring systems",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          },
+          {
+            "id": "nature_005_d",
+            "text": "Organize student groups and community partnerships",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "nature_environment", "weight": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "health_wellness": [
+      {
+        "id": "health_001",
+        "category": "health_wellness",
+        "question": "A friend is stressed about exams. You help by...",
+        "choices": [
+          {
+            "id": "health_001_a",
+            "text": "Sharing relaxation techniques and stress management strategies",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          },
+          {
+            "id": "health_001_b",
+            "text": "Offering to study together and explain difficult concepts",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_001_c",
+            "text": "Creating a study schedule and organizational plan",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 }
+            ]
+          },
+          {
+            "id": "health_001_d",
+            "text": "Listening and providing emotional support",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "health_wellness", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "health_002",
+        "category": "health_wellness",
+        "question": "You're curious about how the human body...",
+        "choices": [
+          {
+            "id": "health_002_a",
+            "text": "Heals itself and maintains health",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          },
+          {
+            "id": "health_002_b",
+            "text": "Can be enhanced through technology like prosthetics or implants",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "health_wellness", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_002_c",
+            "text": "Responds to different diets and exercise routines",
+            "mapping": [
+              { "category": "health_wellness", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_002_d",
+            "text": "Experiences stress and mental health challenges",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "health_003",
+        "category": "health_wellness",
+        "question": "In your community, you'd like to promote...",
+        "choices": [
+          {
+            "id": "health_003_a",
+            "text": "Better access to healthcare and wellness resources",
+            "mapping": [
+              { "category": "health_wellness", "weight": 2 },
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_003_b",
+            "text": "Mental health awareness and support systems",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          },
+          {
+            "id": "health_003_c",
+            "text": "Nutrition education and healthy food options",
+            "mapping": [
+              { "category": "health_wellness", "weight": 2 },
+              { "category": "social_impact", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_003_d",
+            "text": "Fitness programs and active lifestyle opportunities",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "health_004",
+        "category": "health_wellness",
+        "question": "When you hear about a new health trend, you...",
+        "choices": [
+          {
+            "id": "health_004_a",
+            "text": "Research the science behind it before trying",
+            "mapping": [
+              { "category": "health_wellness", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_004_b",
+            "text": "Ask healthcare professionals for their opinion",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          },
+          {
+            "id": "health_004_c",
+            "text": "Check reviews and testimonials from others",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 }
+            ]
+          },
+          {
+            "id": "health_004_d",
+            "text": "Consider the business model and who benefits from it",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "health_005",
+        "category": "health_wellness",
+        "question": "Your dream job would involve...",
+        "choices": [
+          {
+            "id": "health_005_a",
+            "text": "Helping people improve their physical or mental health",
+            "mapping": [
+              { "category": "health_wellness", "weight": 3 }
+            ]
+          },
+          {
+            "id": "health_005_b",
+            "text": "Researching medical breakthroughs and treatments",
+            "mapping": [
+              { "category": "health_wellness", "weight": 2 },
+              { "category": "stem_technology", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_005_c",
+            "text": "Developing health apps or wearable technology",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "health_wellness", "weight": 1 }
+            ]
+          },
+          {
+            "id": "health_005_d",
+            "text": "Creating public health campaigns and education",
+            "mapping": [
+              { "category": "communication_media", "weight": 2 },
+              { "category": "health_wellness", "weight": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "communication_media": [
+      {
+        "id": "media_001",
+        "category": "communication_media",
+        "question": "You discover an important story that needs to be shared. You...",
+        "choices": [
+          {
+            "id": "media_001_a",
+            "text": "Write an article or create content to inform others",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          },
+          {
+            "id": "media_001_b",
+            "text": "Organize a campaign or event to raise awareness",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_001_c",
+            "text": "Create visual content like infographics or videos",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_001_d",
+            "text": "Build a website or app to share the information",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "media_002",
+        "category": "communication_media",
+        "question": "When consuming media (news, videos, podcasts), you value...",
+        "choices": [
+          {
+            "id": "media_002_a",
+            "text": "Accurate reporting and well-researched information",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          },
+          {
+            "id": "media_002_b",
+            "text": "Creative storytelling and engaging presentation",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_002_c",
+            "text": "Stories that inspire action and social change",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_002_d",
+            "text": "Innovative platforms and new ways of delivering content",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "media_003",
+        "category": "communication_media",
+        "question": "Your school needs someone to manage social media. You'd focus on...",
+        "choices": [
+          {
+            "id": "media_003_a",
+            "text": "Creating engaging content and growing the audience",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          },
+          {
+            "id": "media_003_b",
+            "text": "Designing beautiful posts and maintaining brand identity",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_003_c",
+            "text": "Analyzing metrics and optimizing posting strategy",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_003_d",
+            "text": "Highlighting student stories and community impact",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "media_004",
+        "category": "communication_media",
+        "question": "If you started a podcast or YouTube channel, it would be about...",
+        "choices": [
+          {
+            "id": "media_004_a",
+            "text": "Discussing current events and interviewing interesting people",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          },
+          {
+            "id": "media_004_b",
+            "text": "Teaching technical skills or explaining how things work",
+            "mapping": [
+              { "category": "stem_technology", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_004_c",
+            "text": "Sharing creative processes and design tutorials",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_004_d",
+            "text": "Highlighting social issues and community stories",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "media_005",
+        "category": "communication_media",
+        "question": "The best part about creating content is...",
+        "choices": [
+          {
+            "id": "media_005_a",
+            "text": "Sharing information and educating people",
+            "mapping": [
+              { "category": "communication_media", "weight": 3 }
+            ]
+          },
+          {
+            "id": "media_005_b",
+            "text": "The creative process of production and editing",
+            "mapping": [
+              { "category": "arts_creativity", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_005_c",
+            "text": "Building an audience and community",
+            "mapping": [
+              { "category": "business_entrepreneurship", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          },
+          {
+            "id": "media_005_d",
+            "text": "Amplifying voices that aren't usually heard",
+            "mapping": [
+              { "category": "social_impact", "weight": 2 },
+              { "category": "communication_media", "weight": 1 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

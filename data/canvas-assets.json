@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "assetCategories": {
+    "strengths": {
+      "name": "Strengths",
+      "description": "Icons representing personal strengths and abilities",
+      "icons": [
+        { "id": "brain", "name": "Smart", "emoji": "🧠" },
+        { "id": "heart", "name": "Kind", "emoji": "❤️" },
+        { "id": "muscle", "name": "Strong", "emoji": "💪" },
+        { "id": "lightbulb", "name": "Creative", "emoji": "💡" },
+        { "id": "star", "name": "Talented", "emoji": "⭐" },
+        { "id": "hands", "name": "Helpful", "emoji": "🤝" },
+        { "id": "smile", "name": "Friendly", "emoji": "😊" },
+        { "id": "trophy", "name": "Achiever", "emoji": "🏆" },
+        { "id": "book", "name": "Learner", "emoji": "📚" },
+        { "id": "speech", "name": "Communicator", "emoji": "💬" },
+        { "id": "target", "name": "Focused", "emoji": "🎯" },
+        { "id": "rocket", "name": "Ambitious", "emoji": "🚀" },
+        { "id": "puzzle", "name": "Problem Solver", "emoji": "🧩" },
+        { "id": "shield", "name": "Resilient", "emoji": "🛡️" },
+        { "id": "compass", "name": "Leader", "emoji": "🧭" }
+      ]
+    },
+    "passions": {
+      "name": "Passions",
+      "description": "Icons representing hobbies and interests",
+      "icons": [
+        { "id": "music", "name": "Music", "emoji": "🎵" },
+        { "id": "sports", "name": "Sports", "emoji": "⚽" },
+        { "id": "art", "name": "Art", "emoji": "🎨" },
+        { "id": "coding", "name": "Coding", "emoji": "💻" },
+        { "id": "reading", "name": "Reading", "emoji": "📖" },
+        { "id": "gaming", "name": "Gaming", "emoji": "🎮" },
+        { "id": "cooking", "name": "Cooking", "emoji": "🍳" },
+        { "id": "photography", "name": "Photography", "emoji": "📷" },
+        { "id": "dance", "name": "Dance", "emoji": "💃" },
+        { "id": "travel", "name": "Travel", "emoji": "✈️" },
+        { "id": "science", "name": "Science", "emoji": "🔬" },
+        { "id": "writing", "name": "Writing", "emoji": "✍️" },
+        { "id": "nature", "name": "Nature", "emoji": "🌿" },
+        { "id": "film", "name": "Film", "emoji": "🎬" },
+        { "id": "fashion", "name": "Fashion", "emoji": "👗" },
+        { "id": "volunteering", "name": "Volunteering", "emoji": "🤲" },
+        { "id": "animals", "name": "Animals", "emoji": "🐾" },
+        { "id": "tech", "name": "Technology", "emoji": "📱" }
+      ]
+    },
+    "values": {
+      "name": "Values",
+      "description": "Words and concepts representing core values",
+      "presets": [
+        "Honesty",
+        "Creativity",
+        "Freedom",
+        "Growth",
+        "Kindness",
+        "Justice",
+        "Innovation",
+        "Authenticity",
+        "Community",
+        "Excellence",
+        "Courage",
+        "Compassion",
+        "Integrity",
+        "Curiosity",
+        "Respect",
+        "Balance",
+        "Sustainability",
+        "Diversity"
+      ]
+    },
+    "goals": {
+      "name": "Goals",
+      "description": "Icons representing future aspirations",
+      "icons": [
+        { "id": "diploma", "name": "Graduate", "emoji": "🎓" },
+        { "id": "trophy", "name": "Achieve", "emoji": "🏆" },
+        { "id": "globe", "name": "Travel World", "emoji": "🌍" },
+        { "id": "house", "name": "Own Home", "emoji": "🏠" },
+        { "id": "briefcase", "name": "Career Success", "emoji": "💼" },
+        { "id": "family", "name": "Family", "emoji": "👨‍👩‍👧‍👦" },
+        { "id": "money", "name": "Financial Freedom", "emoji": "💰" },
+        { "id": "health", "name": "Health", "emoji": "🏃" },
+        { "id": "learning", "name": "Keep Learning", "emoji": "📚" },
+        { "id": "impact", "name": "Make Impact", "emoji": "🌟" },
+        { "id": "business", "name": "Start Business", "emoji": "🚀" },
+        { "id": "artist", "name": "Create Art", "emoji": "🎨" },
+        { "id": "help", "name": "Help Others", "emoji": "🤝" },
+        { "id": "peace", "name": "Inner Peace", "emoji": "☮️" },
+        { "id": "adventure", "name": "Adventure", "emoji": "🗺️" }
+      ]
+    },
+    "backgrounds": {
+      "name": "Backgrounds",
+      "presets": [
+        {
+          "id": "gradient_1",
+          "name": "Ocean Blue",
+          "type": "gradient",
+          "colors": ["#667eea", "#764ba2"],
+          "direction": "to-br"
+        },
+        {
+          "id": "gradient_2",
+          "name": "Sunset",
+          "type": "gradient",
+          "colors": ["#ff6b6b", "#feca57"],
+          "direction": "to-r"
+        },
+        {
+          "id": "gradient_3",
+          "name": "Forest",
+          "type": "gradient",
+          "colors": ["#56ab2f", "#a8e063"],
+          "direction": "to-br"
+        },
+        {
+          "id": "gradient_4",
+          "name": "Purple Dream",
+          "type": "gradient",
+          "colors": ["#8e2de2", "#4a00e0"],
+          "direction": "to-b"
+        },
+        {
+          "id": "gradient_5",
+          "name": "Peach",
+          "type": "gradient",
+          "colors": ["#ffecd2", "#fcb69f"],
+          "direction": "to-r"
+        },
+        {
+          "id": "solid_1",
+          "name": "Clean White",
+          "type": "solid",
+          "colors": ["#ffffff"]
+        },
+        {
+          "id": "solid_2",
+          "name": "Soft Gray",
+          "type": "solid",
+          "colors": ["#f5f5f5"]
+        },
+        {
+          "id": "solid_3",
+          "name": "Navy Blue",
+          "type": "solid",
+          "colors": ["#1e3a8a"]
+        },
+        {
+          "id": "solid_4",
+          "name": "Mint",
+          "type": "solid",
+          "colors": ["#d1fae5"]
+        },
+        {
+          "id": "solid_5",
+          "name": "Lavender",
+          "type": "solid",
+          "colors": ["#e9d5ff"]
+        }
+      ]
+    }
+  }
+}
