@@ -33,8 +33,10 @@ function CanvasBuilderContent() {
   const [showClearConfirm, setShowClearConfirm] = useState(false);
 
   const handleAddIcon = (zone: CanvasZoneType, emoji: string, name: string) => {
-    addElement({
-      type: 'icon',
+    console.log('🎯 Adding icon:', { zone, emoji, name });
+
+    const newElement = {
+      type: 'icon' as ElementType,
       zone,
       position: { x: 0, y: 0 },
       size: { width: 48, height: 48 },
@@ -42,8 +44,18 @@ function CanvasBuilderContent() {
       content: emoji,
       style: {},
       zIndex: 1,
-    });
+    };
+
+    console.log('📦 Element to add:', newElement);
+    addElement(newElement);
     markZoneCompleted(zone);
+
+    // Close sidebar on mobile after adding an icon so users can see the canvas
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+
+    console.log('✅ Icon added successfully. Current elements:', canvasData.elements.length + 1);
   };
 
   const handleAddValue = (value: string) => {
