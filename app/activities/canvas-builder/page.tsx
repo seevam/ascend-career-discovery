@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CanvasBuilderProvider, useCanvasBuilder } from '@/contexts/canvas-builder-context';
 import { AssetLibrary } from '@/components/canvas-builder/asset-library';
 import { CanvasZone } from '@/components/canvas-builder/canvas-zone';
@@ -31,6 +31,17 @@ function CanvasBuilderContent() {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [showClearConfirm, setShowClearConfirm] = useState(false);
+
+  // Debug: Log whenever canvasData.elements changes
+  useEffect(() => {
+    console.log('📊 Canvas elements updated. Total:', canvasData.elements.length);
+    console.log('📊 Elements by zone:', {
+      strengths: canvasData.elements.filter(e => e.zone === 'strengths').length,
+      passions: canvasData.elements.filter(e => e.zone === 'passions').length,
+      values: canvasData.elements.filter(e => e.zone === 'values').length,
+      goals: canvasData.elements.filter(e => e.zone === 'goals').length,
+    });
+  }, [canvasData.elements]);
 
   const handleAddIcon = (zone: CanvasZoneType, emoji: string, name: string) => {
     console.log('🎯 Adding icon:', { zone, emoji, name });

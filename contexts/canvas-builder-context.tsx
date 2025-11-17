@@ -82,16 +82,24 @@ export function CanvasBuilderProvider({ children }: { children: React.ReactNode 
   useAutoSave(canvasData, saveData, 3000);
 
   const addElement = useCallback((element: Omit<CanvasElement, 'id'>) => {
+    console.log('🔧 Context: addElement called with:', element);
     const newElement: CanvasElement = {
       ...element,
       id: uuidv4(),
     };
+    console.log('🔧 Context: Created element with ID:', newElement.id);
 
-    setCanvasData((prev) => ({
-      ...prev,
-      elements: [...prev.elements, newElement],
-      updatedAt: new Date(),
-    }));
+    setCanvasData((prev) => {
+      console.log('🔧 Context: Previous elements count:', prev.elements.length);
+      const updatedData = {
+        ...prev,
+        elements: [...prev.elements, newElement],
+        updatedAt: new Date(),
+      };
+      console.log('🔧 Context: New elements count:', updatedData.elements.length);
+      console.log('🔧 Context: All elements:', updatedData.elements);
+      return updatedData;
+    });
   }, [setCanvasData]);
 
   const removeElement = useCallback((id: string) => {
