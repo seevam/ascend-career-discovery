@@ -7,10 +7,11 @@ import PageWrapper from '@/components/shared/layout/page-wrapper';
 import RadarChart from '@/components/interest-quest/radar-chart';
 import InterestCard from '@/components/interest-quest/interest-card';
 import ShareModal from '@/components/shared/export/share-modal';
+import { ShareCardModal } from '@/components/interest-quest/share-card-modal';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Sparkles } from 'lucide-react';
+import { Download, Sparkles, Share2 } from 'lucide-react';
 import { triggerCelebration } from '@/lib/confetti';
 import { exportToPDF } from '@/lib/export';
 import { generateShareURL } from '@/lib/share';
@@ -28,6 +29,7 @@ function ResultsContent() {
   const { profile } = useInterestQuest();
   const [shareURL, setShareURL] = useState('');
   const [celebrationTriggered, setCelebrationTriggered] = useState(false);
+  const [isShareCardOpen, setIsShareCardOpen] = useState(false);
 
   // Calculate final results based on responses
   const finalResults = useMemo<FinalResults | null>(() => {
@@ -129,6 +131,16 @@ function ResultsContent() {
     if (!finalResults) return;
     const url = generateShareURL('/activities/interest-quest', finalResults);
     setShareURL(url);
+    return url;
+  };
+
+  // Open share card modal
+  const handleOpenShareCard = () => {
+    if (!shareURL) {
+      const url = handleGenerateShareURL();
+      setShareURL(url || '');
+    }
+    setIsShareCardOpen(true);
   };
 
   // Handle PDF export
@@ -257,6 +269,10 @@ function ResultsContent() {
                   <Download className="mr-2 h-4 w-4" />
                   Download PDF
                 </Button>
+                <Button onClick={handleOpenShareCard} className="bg-gradient-to-r from-purple-600 to-pink-600">
+                  <Share2 className="mr-2 h-4 w-4" />
+                  Create Story Card
+                </Button>
                 <ShareModal shareURL={shareURL} onGenerateURL={handleGenerateShareURL} />
               </div>
               <p className="mt-4 text-sm text-gray-600">
@@ -319,6 +335,18 @@ function ResultsContent() {
           </Button>
         </div>
       </div>
+
+      {/* Share Card Modal */}
+      {finalResults && (
+        <ShareCardModal
+          isOpen={isShareCardOpen}
+          onClose={() => setIsShareCardOpen(false)}
+          results={finalResults}
+          shareURL={shareURL || window.location.origin}
+          points={profile.points?.total || 0}
+          level={profile.points?.level || 1}
+        />
+      )}
     </PageWrapper>
   );
 }

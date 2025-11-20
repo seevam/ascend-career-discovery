@@ -46,6 +46,9 @@ export interface InterestProfile {
   completedAt: Date | null;
   categoryProgress: CategoryProgress[];
   finalResults: FinalResults | null;
+  achievements: Achievement[];
+  points: UserPoints;
+  categoryStartTimes: Record<string, Date>;
 }
 
 export interface FinalResults {
@@ -86,4 +89,32 @@ export interface StoredInterestQuestData {
   data: InterestProfile;
   version: string;
   expiry: number;
+}
+
+// Achievement System Types
+export type AchievementType =
+  | 'first_category'
+  | 'three_categories'
+  | 'all_categories'
+  | 'speed_demon'
+  | 'thoughtful'
+  | 'explorer'
+  | 'balanced'
+  | 'specialist'
+  | 'consistent';
+
+export interface Achievement {
+  id: AchievementType;
+  title: string;
+  description: string;
+  icon: string;
+  points: number;
+  unlockedAt: Date | null;
+  rarity: 'common' | 'rare' | 'epic' | 'legendary';
+}
+
+export interface UserPoints {
+  total: number;
+  level: number;
+  nextLevelAt: number;
 }

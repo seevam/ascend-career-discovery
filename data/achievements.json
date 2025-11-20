@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "achievements": [
+    {
+      "id": "first_category",
+      "title": "Getting Started!",
+      "description": "Complete your first category",
+      "icon": "🎯",
+      "points": 50,
+      "rarity": "common"
+    },
+    {
+      "id": "three_categories",
+      "title": "Explorer",
+      "description": "Complete 3 different categories",
+      "icon": "🗺️",
+      "points": 100,
+      "rarity": "rare"
+    },
+    {
+      "id": "all_categories",
+      "title": "Master Explorer",
+      "description": "Complete all 7 categories",
+      "icon": "🏆",
+      "points": 500,
+      "rarity": "legendary"
+    },
+    {
+      "id": "speed_demon",
+      "title": "Speed Demon",
+      "description": "Complete a category in under 2 minutes",
+      "icon": "⚡",
+      "points": 75,
+      "rarity": "rare"
+    },
+    {
+      "id": "thoughtful",
+      "title": "Deep Thinker",
+      "description": "Spend over 5 minutes on a single category",
+      "icon": "🤔",
+      "points": 50,
+      "rarity": "common"
+    },
+    {
+      "id": "explorer",
+      "title": "Wide Explorer",
+      "description": "Score above 50% in 5 different categories",
+      "icon": "🌟",
+      "points": 150,
+      "rarity": "epic"
+    },
+    {
+      "id": "balanced",
+      "title": "Jack of All Trades",
+      "description": "Have all categories within 20% of each other",
+      "icon": "⚖️",
+      "points": 200,
+      "rarity": "epic"
+    },
+    {
+      "id": "specialist",
+      "title": "Specialist",
+      "description": "Score above 80% in one category",
+      "icon": "💎",
+      "points": 100,
+      "rarity": "rare"
+    },
+    {
+      "id": "consistent",
+      "title": "Consistent Explorer",
+      "description": "Complete 3 categories in one session",
+      "icon": "🔥",
+      "points": 125,
+      "rarity": "rare"
+    }
+  ]
+}

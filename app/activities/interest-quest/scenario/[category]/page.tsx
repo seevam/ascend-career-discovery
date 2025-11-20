@@ -2,20 +2,40 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import { motion } from 'framer-motion';
 import { InterestQuestProvider, useInterestQuest } from '@/contexts/interest-quest-context';
 import PageWrapper from '@/components/shared/layout/page-wrapper';
-import { Button } from '@/components/ui/button';
+import { AnimatedButton } from '@/components/ui/animated-button';
 import { Card } from '@/components/ui/card';
 import { Scenario, InterestCategory } from '@/types/interest-quest';
+import { StoryProgress } from '@/components/interest-quest/story-progress';
+import { AchievementPopup } from '@/components/interest-quest/achievement-popup';
 import categoriesData from '@/data/categories.json';
 import scenariosData from '@/data/scenarios.json';
+
+// Category color mapping for progress bars
+const CATEGORY_COLORS: Record<InterestCategory, string> = {
+  arts_creativity: '#9333ea',
+  stem_technology: '#3b82f6',
+  social_impact: '#22c55e',
+  business_entrepreneurship: '#f97316',
+  nature_environment: '#10b981',
+  health_wellness: '#ef4444',
+  communication_media: '#6366f1',
+};
 
 function ScenarioContent() {
   const router = useRouter();
   const params = useParams();
   const categoryId = params.category as InterestCategory;
 
-  const { recordResponse, isCategoryCompleted } = useInterestQuest();
+  const {
+    recordResponse,
+    isCategoryCompleted,
+    currentAchievement,
+    clearAchievement,
+    startCategory
+  } = useInterestQuest();
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -26,6 +46,13 @@ function ScenarioContent() {
 
   // Get category metadata
   const category = categoriesData.categories.find((c) => c.id === categoryId);
+
+  // Start tracking time for this category
+  useEffect(() => {
+    if (category && !isCategoryCompleted(categoryId)) {
+      startCategory(categoryId);
+    }
+  }, [category, categoryId, isCategoryCompleted, startCategory]);
 
   // Redirect if category not found or already completed
   useEffect(() => {
@@ -112,25 +139,21 @@ function ScenarioContent() {
             </div>
           </div>
 
-          {/* Progress Dots */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-700">
-              Scenario {currentScenarioIndex + 1} of {scenarios.length}
-            </span>
-            <div className="flex gap-1.5">
-              {scenarios.map((_, index) => (
-                <div
-                  key={index}
-                  className={`h-2 w-2 rounded-full transition-all ${
-                    index === currentScenarioIndex
-                      ? 'w-8 bg-purple-600'
-                      : index < currentScenarioIndex
-                      ? 'bg-green-500'
-                      : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+          {/* Story-Style Progress Indicator */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-gray-700">
+                Question {currentScenarioIndex + 1} of {scenarios.length}
+              </span>
+              <span className="text-xs text-gray-500">
+                {Math.round(((currentScenarioIndex) / scenarios.length) * 100)}% Complete
+              </span>
             </div>
+            <StoryProgress
+              total={scenarios.length}
+              current={currentScenarioIndex}
+              categoryColor={CATEGORY_COLORS[categoryId]}
+            />
           </div>
         </div>
 
@@ -147,9 +170,14 @@ function ScenarioContent() {
 
             {/* Choices */}
             <div className="space-y-3">
-              {currentScenario.choices.map((choice) => (
-                <button
+              {currentScenario.choices.map((choice, index) => (
+                <motion.button
                   key={choice.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
                   onClick={() => handleChoiceSelect(choice.id)}
                   className={`
                     group w-full rounded-xl border-2 p-4 text-left transition-all
@@ -191,18 +219,18 @@ function ScenarioContent() {
                       {choice.text}
                     </p>
                   </div>
-                </button>
+                </motion.button>
               ))}
             </div>
           </Card>
 
           {/* Navigation */}
           <div className="flex justify-end">
-            <Button
+            <AnimatedButton
               size="lg"
               onClick={handleNext}
               disabled={!selectedChoice}
-              className="h-12 px-8 text-base font-semibold shadow-lg transition-transform hover:scale-105 disabled:opacity-50"
+              className="h-12 px-8 text-base font-semibold shadow-lg disabled:opacity-50"
             >
               {isLastScenario ? 'Complete Category' : 'Next Scenario'}
               <svg
@@ -216,7 +244,7 @@ function ScenarioContent() {
               >
                 <path d="M9 5l7 7-7 7" />
               </svg>
-            </Button>
+            </AnimatedButton>
           </div>
 
           {/* Tip */}
@@ -226,6 +254,12 @@ function ScenarioContent() {
             </p>
           </div>
         </div>
+
+        {/* Achievement Popup */}
+        <AchievementPopup
+          achievement={currentAchievement}
+          onClose={clearAchievement}
+        />
       </div>
     </PageWrapper>
   );
