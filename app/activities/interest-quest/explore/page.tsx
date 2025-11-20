@@ -4,13 +4,14 @@ import { useRouter } from 'next/navigation';
 import { InterestQuestProvider, useInterestQuest } from '@/contexts/interest-quest-context';
 import PageWrapper from '@/components/shared/layout/page-wrapper';
 import CategoryCard from '@/components/interest-quest/category-card';
+import { StreakDisplay } from '@/components/interest-quest/streak-display';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import categoriesData from '@/data/categories.json';
 
 function ExploreContent() {
   const router = useRouter();
-  const { getCompletedCategories, isCategoryCompleted } = useInterestQuest();
+  const { profile, getCompletedCategories, isCategoryCompleted } = useInterestQuest();
 
   const completedCount = getCompletedCategories();
   const totalCategories = categoriesData.categories.length;
@@ -42,6 +43,9 @@ function ExploreContent() {
             Choose a category to begin exploring through interactive scenarios
           </p>
         </div>
+
+        {/* Streak & XP Display */}
+        <StreakDisplay points={profile.points} />
 
         {/* Progress Tracker */}
         <div className="mb-8 rounded-2xl bg-white p-6 shadow-lg">

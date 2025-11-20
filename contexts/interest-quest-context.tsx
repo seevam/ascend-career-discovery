@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useCallback, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useCallback, useState, useEffect, ReactNode } from 'react';
 import { useLocalStorage } from '@/hooks/use-local-storage';
 import { useAutoSave } from '@/hooks/use-auto-save';
 import { STORAGE_KEYS } from '@/lib/storage';
@@ -67,6 +67,10 @@ function createEmptyProfile(): InterestProfile {
       total: 0,
       level: 1,
       nextLevelAt: 100,
+      currentStreak: 0,
+      longestStreak: 0,
+      lastLoginDate: null,
+      dailyBonusClaimed: false,
     },
     categoryStartTimes: {},
   };
@@ -89,6 +93,61 @@ export function InterestQuestProvider({ children }: InterestQuestProviderProps) 
   useAutoSave(profile, (data) => {
     setProfile(data);
   });
+
+  // Check and update daily login streak
+  useEffect(() => {
+    const checkDailyLogin = () => {
+      const today = new Date().toISOString().split('T')[0];
+      const lastLogin = profile.points.lastLoginDate;
+
+      // If this is first login or new day
+      if (!lastLogin || lastLogin !== today) {
+        setProfile((prev) => {
+          const updated = { ...prev };
+          let newStreak = prev.points.currentStreak;
+          let dailyBonus = 10; // Base daily bonus
+
+          // Check if streak continues (logged in yesterday)
+          if (lastLogin) {
+            const lastDate = new Date(lastLogin);
+            const todayDate = new Date(today);
+            const diffDays = Math.floor((todayDate.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24));
+
+            if (diffDays === 1) {
+              // Streak continues
+              newStreak = prev.points.currentStreak + 1;
+              dailyBonus = 10 + (newStreak * 5); // Bonus increases with streak
+            } else if (diffDays > 1) {
+              // Streak broken
+              newStreak = 1;
+            }
+          } else {
+            // First login
+            newStreak = 1;
+          }
+
+          // Update points with daily bonus
+          const newTotal = prev.points.total + dailyBonus;
+          const newLevel = Math.floor(newTotal / 100) + 1;
+
+          updated.points = {
+            ...prev.points,
+            total: newTotal,
+            level: newLevel,
+            nextLevelAt: newLevel * 100,
+            currentStreak: newStreak,
+            longestStreak: Math.max(prev.points.longestStreak, newStreak),
+            lastLoginDate: today,
+            dailyBonusClaimed: true,
+          };
+
+          return updated;
+        });
+      }
+    };
+
+    checkDailyLogin();
+  }, [profile.points.lastLoginDate, setProfile]);
 
   // Unlock an achievement
   const unlockAchievement = useCallback((achievementId: AchievementType) => {

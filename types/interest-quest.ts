@@ -117,4 +117,8 @@ export interface UserPoints {
   total: number;
   level: number;
   nextLevelAt: number;
+  currentStreak: number;
+  longestStreak: number;
+  lastLoginDate: string | null;
+  dailyBonusClaimed: boolean;
 }

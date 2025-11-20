@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useSwipeable } from 'react-swipeable';
 import { InterestQuestProvider, useInterestQuest } from '@/contexts/interest-quest-context';
 import PageWrapper from '@/components/shared/layout/page-wrapper';
 import { AnimatedButton } from '@/components/ui/animated-button';
@@ -10,6 +11,7 @@ import { Card } from '@/components/ui/card';
 import { Scenario, InterestCategory } from '@/types/interest-quest';
 import { StoryProgress } from '@/components/interest-quest/story-progress';
 import { AchievementPopup } from '@/components/interest-quest/achievement-popup';
+import { FloatingTracker } from '@/components/interest-quest/floating-tracker';
 import categoriesData from '@/data/categories.json';
 import scenariosData from '@/data/scenarios.json';
 
@@ -30,6 +32,7 @@ function ScenarioContent() {
   const categoryId = params.category as InterestCategory;
 
   const {
+    profile,
     recordResponse,
     isCategoryCompleted,
     currentAchievement,
@@ -39,6 +42,8 @@ function ScenarioContent() {
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [swipeDirection, setSwipeDirection] = useState<'up' | 'down' | null>(null);
+  const [showHint, setShowHint] = useState(false);
 
   // Get scenarios for this category
   const scenarios = (scenariosData.scenarios[categoryId as keyof typeof scenariosData.scenarios] ||
@@ -46,6 +51,47 @@ function ScenarioContent() {
 
   // Get category metadata
   const category = categoriesData.categories.find((c) => c.id === categoryId);
+
+  // Calculate real-time top interests
+  const topInterests = useMemo(() => {
+    const categoryScores: Record<InterestCategory, number> = {
+      arts_creativity: 0,
+      stem_technology: 0,
+      social_impact: 0,
+      business_entrepreneurship: 0,
+      nature_environment: 0,
+      health_wellness: 0,
+      communication_media: 0,
+    };
+
+    // Calculate scores from all responses
+    profile.categoryProgress.forEach((categoryProgress) => {
+      const categoryScenarios = scenariosData.scenarios[categoryProgress.category];
+      if (!categoryScenarios) return;
+
+      categoryProgress.responses.forEach((response) => {
+        const scenario = categoryScenarios.find((s) => s.id === response.scenarioId);
+        if (!scenario) return;
+
+        const choice = scenario.choices.find((c) => c.id === response.choiceId);
+        if (!choice) return;
+
+        choice.mapping.forEach((map) => {
+          categoryScores[map.category as InterestCategory] += map.weight;
+        });
+      });
+    });
+
+    // Sort and return top 3
+    return Object.entries(categoryScores)
+      .map(([category, score]) => ({
+        category: category as InterestCategory,
+        score,
+      }))
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+  }, [profile.categoryProgress]);
 
   // Start tracking time for this category
   useEffect(() => {
@@ -93,6 +139,7 @@ function ScenarioContent() {
     recordResponse(currentScenario.id, selectedChoice, categoryId);
 
     setIsTransitioning(true);
+    setSwipeDirection('up');
 
     // Delay before moving to next scenario or returning to explore
     setTimeout(() => {
@@ -104,9 +151,25 @@ function ScenarioContent() {
         setCurrentScenarioIndex(currentScenarioIndex + 1);
         setSelectedChoice(null);
         setIsTransitioning(false);
+        setSwipeDirection(null);
+        setShowHint(false);
       }
     }, 300);
   };
+
+  // Swipe handlers
+  const swipeHandlers = useSwipeable({
+    onSwipedUp: () => {
+      if (selectedChoice) {
+        handleNext();
+      }
+    },
+    onSwipedDown: () => {
+      setShowHint(!showHint);
+    },
+    trackMouse: true,
+    delta: 50,
+  });
 
   return (
     <PageWrapper className="bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
@@ -157,13 +220,20 @@ function ScenarioContent() {
           </div>
         </div>
 
-        {/* Scenario Card */}
-        <div
-          className={`transition-opacity duration-300 ${
-            isTransitioning ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
-          <Card className="mb-6 bg-white p-8 shadow-xl">
+        {/* Scenario Card with Swipe Support */}
+        <div {...swipeHandlers} className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentScenarioIndex}
+              initial={{ y: swipeDirection === 'down' ? -50 : 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{
+                y: swipeDirection === 'up' ? -100 : swipeDirection === 'down' ? 100 : 0,
+                opacity: 0
+              }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            >
+              <Card className="mb-6 bg-white p-8 shadow-xl">
             <h2 className="mb-6 text-2xl font-bold text-gray-900">
               {currentScenario.question}
             </h2>
@@ -224,6 +294,20 @@ function ScenarioContent() {
             </div>
           </Card>
 
+          {/* Swipe Hint Indicator */}
+          {selectedChoice && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4 flex items-center justify-center gap-2 text-sm text-gray-500"
+            >
+              <svg className="h-4 w-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+              <span>Swipe up or click Next to continue</span>
+            </motion.div>
+          )}
+
           {/* Navigation */}
           <div className="flex justify-end">
             <AnimatedButton
@@ -253,6 +337,32 @@ function ScenarioContent() {
               💡 Choose the option that feels most natural to you - there are no wrong answers!
             </p>
           </div>
+
+          {/* Expandable Hint (Swipe Down) */}
+          <AnimatePresence>
+            {showHint && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mt-4 overflow-hidden rounded-lg bg-purple-50 p-4"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">💭</span>
+                  <div>
+                    <h4 className="font-semibold text-purple-900">Think about it...</h4>
+                    <p className="mt-1 text-sm text-purple-700">
+                      Consider which option reflects what you genuinely enjoy, not what others expect of you.
+                      Your authentic interests will guide you to the most fulfilling career path.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Achievement Popup */}
@@ -260,6 +370,9 @@ function ScenarioContent() {
           achievement={currentAchievement}
           onClose={clearAchievement}
         />
+
+        {/* Floating Interest Tracker */}
+        <FloatingTracker topInterests={topInterests} />
       </div>
     </PageWrapper>
   );
