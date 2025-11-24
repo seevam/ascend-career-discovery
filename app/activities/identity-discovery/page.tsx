@@ -31,9 +31,11 @@ import { cn } from '@/lib/utils';
 function PhaseIndicator({
   currentPhase,
   completedPhases,
+  onPhaseClick,
 }: {
   currentPhase: PhaseType;
   completedPhases: Set<PhaseType>;
+  onPhaseClick?: (phase: PhaseType) => void;
 }) {
   const phases: { id: PhaseType; label: string; icon: string }[] = [
     { id: 'welcome', label: 'Welcome', icon: '👋' },
@@ -51,11 +53,14 @@ function PhaseIndicator({
           <motion.div
             className={cn(
               'flex flex-col items-center gap-2',
-              index <= currentIndex ? 'opacity-100' : 'opacity-40'
+              index <= currentIndex ? 'opacity-100' : 'opacity-40',
+              index <= currentIndex && onPhaseClick && 'cursor-pointer'
             )}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: index <= currentIndex ? 1 : 0.4, y: 0 }}
             transition={{ delay: index * 0.1 }}
+            onClick={() => index <= currentIndex && onPhaseClick?.(phase.id)}
+            whileHover={index <= currentIndex && onPhaseClick ? { scale: 1.05 } : undefined}
           >
             <div
               className={cn(
@@ -305,6 +310,37 @@ function UnlockPhase() {
           />
         )}
       </AnimatePresence>
+
+      {/* Navigation to Compose Phase */}
+      {state.unlockedElements.length > 0 && (
+        <div className="max-w-2xl mx-auto pt-8 border-t">
+          <Card className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-950/20 dark:to-orange-950/20">
+            <CardContent className="p-6">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-center sm:text-left">
+                  <h3 className="font-semibold text-lg mb-1">
+                    Ready to create your canvas?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {state.responses.length === 10
+                      ? 'All challenges complete! Time to compose your identity canvas.'
+                      : `You've unlocked ${state.unlockedElements.length} element${state.unlockedElements.length > 1 ? 's' : ''}. You can start composing now or complete more challenges.`
+                    }
+                  </p>
+                </div>
+                <Button
+                  size="lg"
+                  onClick={() => completePhase('unlock')}
+                  className="whitespace-nowrap"
+                >
+                  Compose Canvas
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
@@ -523,7 +559,7 @@ function FinalizePhase() {
 }
 
 function IdentityDiscoveryContent() {
-  const { state, startPhase, completePhase } = useIdentityDiscovery();
+  const { state, startPhase, completePhase, goToPhase } = useIdentityDiscovery();
 
   const completedPhases = new Set<PhaseType>(
     Object.entries(state.phases)
@@ -542,6 +578,7 @@ function IdentityDiscoveryContent() {
         <PhaseIndicator
           currentPhase={state.currentPhase}
           completedPhases={completedPhases}
+          onPhaseClick={goToPhase}
         />
 
         {/* Phase content */}
