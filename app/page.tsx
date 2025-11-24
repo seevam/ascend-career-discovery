@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Sparkles, Palette, ArrowRight, Clock, Smartphone } from 'lucide-react';
+import { Sparkles, Palette, Trophy, ArrowRight, Clock, Smartphone } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -20,12 +20,12 @@ export default function HomePage() {
             Discover Your Path
           </h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Two interactive activities to help you explore your interests and express your identity
+            Three interactive activities to help you explore your interests and express your identity
           </p>
         </div>
 
         {/* Activities Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Activity 1: Interest Quest */}
           <Card className="p-8 hover:shadow-2xl transition-shadow">
             <div className="flex items-center gap-3 mb-4">
@@ -115,6 +115,53 @@ export default function HomePage() {
             <Link href="/activities/canvas-builder">
               <Button className="w-full" size="lg" variant="secondary">
                 Start Canvas Builder
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </Card>
+
+          {/* Activity 3: Identity Discovery */}
+          <Card className="p-8 hover:shadow-2xl transition-shadow border-2 border-yellow-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-yellow-100 p-3 rounded-full">
+                <Trophy className="w-6 h-6 text-yellow-600" />
+              </div>
+              <h3 className="text-2xl font-bold">Identity Discovery</h3>
+            </div>
+
+            <p className="text-gray-600 mb-6">
+              Unlock your unique identity through 10 meaningful challenges. Reflect on your strengths, values, and interests, then compose them into a visual identity canvas.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <Clock className="w-4 h-4" />
+                <span>20-25 minutes</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <Smartphone className="w-4 h-4" />
+                <span>Mobile friendly</span>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-6">
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-600">✓</span>
+                <span className="text-sm text-gray-600">10 gamified unlock challenges</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-600">✓</span>
+                <span className="text-sm text-gray-600">Earn badges, stickers, and rewards</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-yellow-600">✓</span>
+                <span className="text-sm text-gray-600">Create your unique identity collage</span>
+              </div>
+            </div>
+
+            <Link href="/activities/identity-discovery">
+              <Button className="w-full bg-yellow-600 hover:bg-yellow-700" size="lg">
+                Start Identity Discovery
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
