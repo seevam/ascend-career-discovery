@@ -54,4 +54,5 @@ export function clearStorage(key: string): void {
 export const STORAGE_KEYS = {
   INTEREST_QUEST: 'ascend_interest_quest_v1',
   CANVAS_BUILDER: 'ascend_canvas_builder_v1',
+  IDENTITY_DISCOVERY: 'ascend_identity_discovery_v1',
 } as const;

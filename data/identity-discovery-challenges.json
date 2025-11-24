@@ -1,0 +1,220 @@
+{
+  "challenges": [
+    {
+      "id": "strength-core",
+      "componentNumber": 1,
+      "category": "strengths",
+      "element": "Core Strength #1 (Most Authentic)",
+      "unlockPrompt": "The \"Me\" Test",
+      "unlockChallenge": "Which strength feels the most authentically you? Why?",
+      "rewardType": "sticker",
+      "rewardName": "My Top Strength",
+      "rewardIcon": "⭐",
+      "sessionAlignment": "Assessment Review",
+      "phase": 2,
+      "order": 1
+    },
+    {
+      "id": "strength-enjoyed",
+      "componentNumber": 2,
+      "category": "strengths",
+      "element": "Enjoyed Strength #2 (Most Used/Liked)",
+      "unlockPrompt": "Power-Up Priority",
+      "unlockChallenge": "A strength you genuinely enjoy using. Describe one recent situation where you used it.",
+      "rewardType": "badge",
+      "rewardName": "The Collaborator/Creator",
+      "rewardIcon": "🤝",
+      "sessionAlignment": "Assessment Review",
+      "phase": 2,
+      "order": 2
+    },
+    {
+      "id": "strength-development",
+      "componentNumber": 3,
+      "category": "strengths",
+      "element": "Development Strength #3 (Curious To Learn)",
+      "unlockPrompt": "Future Focus",
+      "unlockChallenge": "One strength to develop further in the next year. Why are you curious about it?",
+      "rewardType": "badge",
+      "rewardName": "Curious Learner",
+      "rewardIcon": "🔍",
+      "sessionAlignment": "Assessment Review",
+      "phase": 2,
+      "order": 3
+    },
+    {
+      "id": "value-core",
+      "componentNumber": 4,
+      "category": "values",
+      "element": "Core Personal Value (Non-negotiable)",
+      "unlockPrompt": "The Anchor Test",
+      "unlockChallenge": "Your non-negotiable value. Write a headline for a news story about someone living by it.",
+      "rewardType": "badge",
+      "rewardName": "The Anchor",
+      "rewardIcon": "⚓",
+      "sessionAlignment": "Values & Beliefs Discovery",
+      "phase": 2,
+      "order": 4
+    },
+    {
+      "id": "value-motto",
+      "componentNumber": 5,
+      "category": "values",
+      "element": "Personal Motto/Quote (Belief-Driven)",
+      "unlockPrompt": "My Manifesto",
+      "unlockChallenge": "Complete: \"I strongly care about changing _____ because I believe _____.\" Craft a short personal quote.",
+      "rewardType": "textBox",
+      "rewardName": "My Manifesto",
+      "rewardIcon": "📜",
+      "sessionAlignment": "Values & Beliefs Discovery",
+      "phase": 2,
+      "order": 5
+    },
+    {
+      "id": "interest-passion",
+      "componentNumber": 6,
+      "category": "interests",
+      "element": "Passion Activity (Losing Track of Time)",
+      "unlockPrompt": "The Time Warp",
+      "unlockChallenge": "One activity where you lose track of time. Select an image that symbolizes this feeling.",
+      "rewardType": "sticker",
+      "rewardName": "Flow State",
+      "rewardIcon": "⚡",
+      "sessionAlignment": "Passion & Interest Inventory",
+      "phase": 2,
+      "order": 6
+    },
+    {
+      "id": "interest-curiosity",
+      "componentNumber": 7,
+      "category": "interests",
+      "element": "Curiosity Topic (Learning for Fun)",
+      "unlockPrompt": "The Rabbit Hole",
+      "unlockChallenge": "Anything you would love to learn, no matter how strange or unrelated to school.",
+      "rewardType": "sticker",
+      "rewardName": "The Rabbit Hole",
+      "rewardIcon": "🐰",
+      "sessionAlignment": "Passion & Interest Inventory",
+      "phase": 2,
+      "order": 7
+    },
+    {
+      "id": "interest-problem-solving",
+      "componentNumber": 8,
+      "category": "interests",
+      "element": "Problem-Solving Type (Creative/Social/Analytical/Physical)",
+      "unlockPrompt": "The Fixer",
+      "unlockChallenge": "What kind of problems do you love solving most? Select one and give a quick example.",
+      "rewardType": "badge",
+      "rewardName": "The Fixer",
+      "rewardIcon": "🔧",
+      "sessionAlignment": "Passion & Interest Inventory",
+      "phase": 2,
+      "order": 8
+    },
+    {
+      "id": "identity-symbol",
+      "componentNumber": 9,
+      "category": "identity",
+      "element": "Visual Identity Symbol (Color/Animal/Abstract)",
+      "unlockPrompt": "Spirit Symbol Selection",
+      "unlockChallenge": "A single symbol (color/animal/abstract) representing you. What single word feeling does it represent?",
+      "rewardType": "sticker",
+      "rewardName": "Spirit Symbol",
+      "rewardIcon": "🦋",
+      "sessionAlignment": "Reflection & Integration",
+      "phase": 3,
+      "order": 9
+    },
+    {
+      "id": "identity-inspiration",
+      "componentNumber": 10,
+      "category": "identity",
+      "element": "Role Model/Inspiration (Excites Them)",
+      "unlockPrompt": "Future Glimpse",
+      "unlockChallenge": "A person/character/field that truly excites you to learn more about, based on your traits.",
+      "rewardType": "imageSlot",
+      "rewardName": "Future Glimpse",
+      "rewardIcon": "🌟",
+      "sessionAlignment": "Reflection & Integration",
+      "phase": 3,
+      "order": 10
+    }
+  ],
+  "megaBadge": {
+    "id": "identity-architect",
+    "name": "Identity Architect",
+    "description": "You've completed all 10 challenges and composed your unique identity canvas!",
+    "icon": "🏆",
+    "points": 500,
+    "rarity": "legendary"
+  },
+  "imageOptions": {
+    "symbols": [
+      { "id": "phoenix", "name": "Phoenix", "emoji": "🔥", "meaning": "Rebirth" },
+      { "id": "tree", "name": "Tree", "emoji": "🌳", "meaning": "Growth" },
+      { "id": "mountain", "name": "Mountain", "emoji": "⛰️", "meaning": "Resilience" },
+      { "id": "wave", "name": "Wave", "emoji": "🌊", "meaning": "Flow" },
+      { "id": "star", "name": "Star", "emoji": "⭐", "meaning": "Aspiration" },
+      { "id": "butterfly", "name": "Butterfly", "emoji": "🦋", "meaning": "Transformation" },
+      { "id": "compass", "name": "Compass", "emoji": "🧭", "meaning": "Direction" },
+      { "id": "lotus", "name": "Lotus", "emoji": "🪷", "meaning": "Purity" },
+      { "id": "sun", "name": "Sun", "emoji": "☀️", "meaning": "Energy" },
+      { "id": "moon", "name": "Moon", "emoji": "🌙", "meaning": "Mystery" }
+    ],
+    "colors": [
+      { "id": "red", "name": "Red", "hex": "#EF4444", "meaning": "Passion" },
+      { "id": "blue", "name": "Blue", "hex": "#3B82F6", "meaning": "Calm" },
+      { "id": "green", "name": "Green", "hex": "#10B981", "meaning": "Balance" },
+      { "id": "yellow", "name": "Yellow", "hex": "#F59E0B", "meaning": "Joy" },
+      { "id": "purple", "name": "Purple", "hex": "#8B5CF6", "meaning": "Creativity" },
+      { "id": "orange", "name": "Orange", "hex": "#F97316", "meaning": "Adventure" },
+      { "id": "pink", "name": "Pink", "hex": "#EC4899", "meaning": "Compassion" },
+      { "id": "teal", "name": "Teal", "hex": "#14B8A6", "meaning": "Clarity" }
+    ]
+  },
+  "problemSolvingTypes": [
+    {
+      "id": "creative",
+      "name": "Creative Problem Solver",
+      "description": "You love finding unique, imaginative solutions",
+      "icon": "🎨",
+      "examples": ["Designing new products", "Finding artistic solutions", "Thinking outside the box"]
+    },
+    {
+      "id": "social",
+      "name": "Social Problem Solver",
+      "description": "You excel at resolving people-centered challenges",
+      "icon": "🤝",
+      "examples": ["Mediating conflicts", "Building team harmony", "Understanding perspectives"]
+    },
+    {
+      "id": "analytical",
+      "name": "Analytical Problem Solver",
+      "description": "You break down complex problems with logic and data",
+      "icon": "🧮",
+      "examples": ["Debugging code", "Analyzing patterns", "Strategic planning"]
+    },
+    {
+      "id": "physical",
+      "name": "Physical Problem Solver",
+      "description": "You solve problems through hands-on action",
+      "icon": "🔨",
+      "examples": ["Building prototypes", "Athletic challenges", "Hands-on repairs"]
+    }
+  ],
+  "passionActivityIdeas": [
+    { "id": "music", "name": "Making/Listening to Music", "icon": "🎵" },
+    { "id": "sports", "name": "Playing Sports", "icon": "⚽" },
+    { "id": "art", "name": "Creating Art", "icon": "🎨" },
+    { "id": "coding", "name": "Coding/Building", "icon": "💻" },
+    { "id": "reading", "name": "Reading/Learning", "icon": "📚" },
+    { "id": "gaming", "name": "Gaming", "icon": "🎮" },
+    { "id": "nature", "name": "Outdoor Activities", "icon": "🌲" },
+    { "id": "cooking", "name": "Cooking/Baking", "icon": "🍳" },
+    { "id": "writing", "name": "Writing/Journaling", "icon": "✍️" },
+    { "id": "dance", "name": "Dancing/Movement", "icon": "💃" },
+    { "id": "photography", "name": "Photography", "icon": "📸" },
+    { "id": "crafts", "name": "Crafts/DIY", "icon": "✂️" }
+  ]
+}
