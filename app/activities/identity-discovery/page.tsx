@@ -23,6 +23,7 @@ import {
   Flame,
   Home,
   Download,
+  Award,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import confetti from 'canvas-confetti';
