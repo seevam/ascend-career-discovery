@@ -418,6 +418,158 @@ function IdentityDiscoveryContent() {
     );
   }
 
+  // Canvas composition phase
+  if (state.currentPhase === 'compose' || state.currentPhase === 'finalize') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50">
+        {/* Header */}
+        <div className="bg-white border-b-4 border-gray-200 sticky top-0 z-40 shadow-sm">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <button
+                onClick={() => goToPhase('unlock')}
+                className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-xl transition-colors"
+              >
+                <ArrowRight className="w-6 h-6 text-gray-600 rotate-180" />
+                <span className="font-bold text-gray-700">Back to Challenges</span>
+              </button>
+
+              <div className="flex items-center gap-2 bg-green-100 rounded-2xl px-4 py-2 border-2 border-green-300">
+                <Trophy className="w-5 h-5 text-green-600 fill-green-600" />
+                <span className="font-bold text-green-700">{state.totalPoints} XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 py-8 max-w-6xl">
+          {!state.completedAt ? (
+            <>
+              {/* Canvas Builder Section */}
+              <div className="text-center mb-8">
+                <div className="text-7xl mb-4">🎨</div>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
+                  Create Your Identity Canvas
+                </h1>
+                <p className="text-xl text-gray-600">
+                  Drag and arrange your unlocked elements to express your unique identity!
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-[300px_1fr] gap-6 mb-8">
+                {/* Sidebar with unlocked elements */}
+                <div className="bg-white rounded-2xl shadow-lg p-6 border-4 border-gray-200">
+                  <h3 className="font-bold text-lg mb-4 text-gray-800">Your Elements</h3>
+                  <div className="space-y-3">
+                    {state.unlockedElements.map((element) => (
+                      <motion.div
+                        key={element.challengeId}
+                        className="p-4 rounded-xl border-2 border-gray-200 hover:border-green-400 hover:bg-green-50 cursor-pointer transition-all"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl">{element.rewardIcon}</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-bold text-gray-800 truncate">
+                              {element.rewardName}
+                            </p>
+                            <p className="text-xs text-gray-500">Tap to add</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Canvas area */}
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border-4 border-gray-200 min-h-[600px]">
+                  <div className="text-center text-gray-400 mt-32">
+                    <div className="text-6xl mb-4">✨</div>
+                    <p className="text-lg">Your identity canvas will appear here</p>
+                    <p className="text-sm mt-2">Click elements from the sidebar to add them</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Complete button */}
+              <div className="text-center">
+                <Button
+                  onClick={() => {
+                    completePhase('compose');
+                    completePhase('finalize');
+                  }}
+                  className="h-16 px-12 text-xl font-bold rounded-2xl shadow-lg"
+                  style={{ backgroundColor: colors.primary }}
+                  size="lg"
+                >
+                  <Trophy className="w-6 h-6 mr-2" />
+                  COMPLETE JOURNEY
+                </Button>
+              </div>
+            </>
+          ) : (
+            // Completion screen
+            <motion.div
+              className="text-center max-w-3xl mx-auto"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+            >
+              <motion.div
+                className="text-9xl mb-6"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, -10, 0],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                🏆
+              </motion.div>
+
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                Congratulations!
+              </h1>
+              <p className="text-2xl text-gray-600 mb-8">
+                You've completed your Identity Discovery Journey!
+              </p>
+
+              <div className="bg-white rounded-3xl shadow-2xl p-8 border-4 border-yellow-300 mb-8">
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <Award className="w-12 h-12 text-yellow-600 fill-yellow-600" />
+                  <h2 className="text-3xl font-bold text-gray-800">Identity Architect</h2>
+                </div>
+                <p className="text-xl text-gray-600 mb-4">Mega Badge Unlocked!</p>
+                <div className="flex items-center justify-center gap-3 bg-green-100 rounded-2xl px-6 py-3 inline-flex">
+                  <Zap className="w-8 h-8 text-green-600 fill-green-600" />
+                  <span className="text-3xl font-bold text-green-700">{state.totalPoints} Total XP</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button
+                  onClick={() => router.push('/')}
+                  className="h-14 px-8 text-lg font-bold rounded-2xl"
+                  variant="outline"
+                >
+                  <Home className="w-5 h-5 mr-2" />
+                  Back Home
+                </Button>
+                <Button
+                  onClick={() => router.push('/activities/identity-discovery/view')}
+                  className="h-14 px-8 text-lg font-bold rounded-2xl shadow-lg"
+                  style={{ backgroundColor: colors.secondary }}
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  View Results
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   // Main challenges view
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
